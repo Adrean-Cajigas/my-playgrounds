@@ -12,22 +12,18 @@ export default function Home() {
   const [form, setForm] = useState({firstName:"Adrean", lastName:"Cajigas", age:"20"});
 
   const [todos, setTodos] = useState([]);
-  const [todoInput, setTodoInput] = useState("")
+  const [input, setInput] = useState("");
 
-function addTodo()
-{
-  const newTodo = {
-    id: todos.length + 1,   
-    text: todoInput,
-  };
+  function addTodo() {
 
-  setTodos([...todos, newTodo]);
-  setTodoInput("")
-}
+    const newTodo = {
+      id: todos.length + 1,
+      text: input,
+    }
 
-const removeTodo = (id) => {
-  setTodos(todos.filter(todo => todo.id !== id));
-}
+    setTodos([todos, newTodo]);
+    setInput("");
+  }
 
   function ChangeNumber() {
     setCount(prevCount => prevCount + 1);
@@ -83,28 +79,28 @@ const removeTodo = (id) => {
       </div>
 
       {/* USE STATE EXERCISE 1 */}
-      <h1 className="text-center font-[600] text-[2rem] mt-[8rem]">To-do List</h1>
-      <div className="my-[4rem]">
-        <div className="flex justify-center gap-8">
-          <input type="text" className="border-4 border-black p-4" 
-          placeholder="Enter a new item"
-          value={todoInput}
-          onChange={(e) => setTodoInput(e.target.value)}></input>
-          <button className="border-4 border-black p-4"
-          onClick={addTodo}>Add to List</button>
+      <div className="my-[8rem]">
+        <h1 className="font-[600] text-center text-[2rem]">Todo List</h1>
+        <div className="flex justify-center gap-10 mt-[2rem]">
+          <input className="border-4 border-black p-4" placeholder="Enter a Todo Item" onChange={(e)=>setInput(e.target.value)}></input>
+          <button className="border-4 border-black p-4" onClick={addTodo}>Add Todo Item</button>
         </div>
 
+        
+        { todos.map((todo) => (
 
-        {/* todos is the array, map is the array method, todo is the paramter */}
-        {todos.map((todo) => (
-        <div className="flex justify-start items-center gap-4 mt-[3rem] w-[23rem] mx-auto right-0 left-0"
+        <div className="flex justify-start gap-4 w-[25rem] mx-auto right-0 left-0 items-center mt-12"
         key={todo.id}>
-          <input type="checkbox" className="w-[1.5rem] h-[1.5rem] cursor-pointer" onClick={() => removeTodo(todo.id)}></input>
-          <p className="text-[1.5rem]">{todo.text}</p>
+          <input type="checkbox" className="w-[1.2rem] h-[1.2rem]"></input>
+          <p className="text-[1.2rem]">{todo.text}</p>
         </div>
-        ))}  
+
+        ))}
 
       </div>
+
+
+    
     </main>
   );
 }
