@@ -82,8 +82,11 @@ export default function Home() {
       <div className="my-[8rem]">
         <h1 className="font-[600] text-center text-[2rem]">Todo List</h1>
         <div className="flex justify-center gap-10 mt-[2rem]">
-          <input className="border-4 border-black p-4" placeholder="Enter a Todo Item" onChange={(e)=>setInput(e.target.value)}></input>
-          <button className="border-4 border-black p-4" onClick={addTodo}>Add Todo Item</button>
+          <input className="border-4 border-black p-4" placeholder="Enter a Todo Item" 
+          onChange={(e)=>setInput(e.target.value)}></input>
+          <button className="border-4 border-black p-4" 
+          onClick={addTodo}>Add Todo Item
+          </button>
         </div>
 
         
