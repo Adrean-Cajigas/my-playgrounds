@@ -35,3 +35,17 @@ Another big difference is that in Node.js you control the environment. You know 
 Compared to the browser environment, where you don't get the luxury to choose what browser your visitors will use, this is very convenient.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
+
+Node.js Modules
+
+We split our code into different files to organize and reuse code whenever possible. A module system allows us to split and include code and import 
+code written by other developers whenever required. In simple terms, a module is nothing but a JavaScript file. Node.js has many built-in modules
+that comes with Node.js installation such as HTTP, fs, path, and more. CommonJS and ES (EcmaScript) are the module systems used in Node.
+
+Each module is wrapped with an IIFE that provides private scoping of code. This allows you to repeat variable/function names with any conflicts. 
+Before a module is executed, Node.js will wrap it with a function that has 5 parameters :
+
+(function(exports, require, modules, __filename, __dirname) {})
+
+
+

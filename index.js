@@ -1,7 +1,3 @@
-const add = require("./add")
+require("./batman.js");
+require("./superman.js");
 
-console.log("Hello World");
-
-const sum = add(1,2);
-
-console.log(sum);
