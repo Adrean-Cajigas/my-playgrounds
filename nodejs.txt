@@ -47,5 +47,11 @@ Before a module is executed, Node.js will wrap it with a function that has 5 par
 
 (function(exports, require, modules, __filename, __dirname) {})
 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+NPM: Node Package Manager is the manager used to install, delete, and update Javascript packages for nodejs. 
+
+NPX: Node Package Executer is a tool used to execute nodejs packages directly without installing them.
+
 
 
